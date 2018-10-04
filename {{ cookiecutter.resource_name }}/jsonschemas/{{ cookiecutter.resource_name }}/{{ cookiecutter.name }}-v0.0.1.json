@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "{{ cookiecutter.class_name }}",
+  "description": "JSON schema for {{ cookiecutter.name }}.",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "pid"
+  ],
+  "properties": {
+    "$schema": {
+      "title": "Schema",
+      "description": "Schema to validate {{ cookiecutter.name }} records against.",
+      "type": "string",
+      "minLength": 9
+    },
+    "pid": {
+      "title": "{{ cookiecutter.class_name }} ID",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<ul class='re-list'>
+  <li ng-repeat="record in vm.invenioSearchResults.hits.hits track by $index">
+    <h3><a target="_self" ng-href="/{{ cookiecutter.resource_name }}/{% raw %}{{ record.metadata.pid }}{% endraw %}">{% raw %}{{ record.metadata.pid}}{% endraw %}</a></h3>
+    <div class="text-right">
+      <ul class="list-inline">
+        <li>
+          <a ng-click="showSource=!showSource">
+            {{ 'JSON' }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div ng-hide="!showSource">
+      <pre>{% raw %}{{ record | json }}{% endraw %}</pre>
+    </div>
+    <hr />
+  </li>
+</ul>
